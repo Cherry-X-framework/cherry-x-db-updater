@@ -1,6 +1,6 @@
 <?php
 /**
- * Interface Builder module
+ * DB Updater module
  *
  * Version: 1.0.0
  */
@@ -77,7 +77,8 @@ if ( ! class_exists( 'CX_DB_Updater' ) ) {
 		/**
 		 * Cherry_Db_Updater constructor.
 		 *
-		 * @since 1.0.0
+		 * @since  1.0.0
+		 * @param  array $args Module arguments.
 		 * @return void
 		 */
 		public function __construct( $args = array() ) {
@@ -200,7 +201,7 @@ if ( ! class_exists( 'CX_DB_Updater' ) ) {
 			}
 
 			if ( $this->is_updated() ) {
-				$this->show_updated_notice( $slug );
+				$this->show_updated_notice();
 			}
 		}
 
@@ -229,7 +230,7 @@ if ( ! class_exists( 'CX_DB_Updater' ) ) {
 		}
 
 		/**
-		 * Check if update was succesfully done.
+		 * Check if update was successfully done.
 		 *
 		 * @since 1.0.0
 		 * @return bool
