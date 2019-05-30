@@ -314,12 +314,12 @@ if ( ! class_exists( 'CX_DB_Updater' ) ) {
 		private function notice_submit( $slug = '' ) {
 
 			$format = '<a href="%1s" class="button button-primary">%2$s</a>';
-			$label  = esc_html__( 'Start Update', 'cherry-framework' );
+			$label  = $this->args['labels']['start_update'];
 			$url    = add_query_arg(
 				array(
 					'cherry_x_db_update' => true,
-					'slug'             => $slug,
-					'_nonce'           => $this->create_nonce( $slug ),
+					'slug'               => $slug,
+					'_nonce'             => $this->create_nonce( $slug ),
 				),
 				esc_url( admin_url( 'index.php' ) )
 			);
